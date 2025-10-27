@@ -99,9 +99,21 @@ export default function SequentialOptimizer() {
   const sampleData = useMemo(() => {
     const samples = 300;
     const xs = [];
+    const numA = Number(a);
+    const numB = Number(b);
+    
+    // Only generate data if we have valid numbers
+    if (isNaN(numA) || isNaN(numB) || numA >= numB) {
+      return [];
+    }
+    
     for (let i = 0; i <= samples; i++) {
-      const x = a + (i / samples) * (b - a);
-      xs.push({ x: Number(x.toFixed(6)), y: f(x) });
+      const x = numA + (i / samples) * (numB - numA);
+      const y = f(x);
+      // Only add valid data points
+      if (typeof x === 'number' && !isNaN(x) && typeof y === 'number' && !isNaN(y)) {
+        xs.push({ x: Number(x.toFixed(6)), y: Number(y.toFixed(6)) });
+      }
     }
     return xs;
   }, [a, b, f]);

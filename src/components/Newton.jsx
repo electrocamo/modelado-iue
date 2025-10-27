@@ -141,10 +141,21 @@ export default function NewtonOptimizer() {
   const sampleData = useMemo(() => {
     const samples = 300;
     const xs = [];
+    const numX0 = Number(x0);
     const range = 6; // Show range around x0
+    
+    // Only generate data if we have valid numbers
+    if (isNaN(numX0)) {
+      return [];
+    }
+    
     for (let i = 0; i <= samples; i++) {
-      const x = x0 - range/2 + (i / samples) * range;
-      xs.push({ x: Number(x.toFixed(6)), y: f(x) });
+      const x = numX0 - range/2 + (i / samples) * range;
+      const y = f(x);
+      // Only add valid data points
+      if (typeof x === 'number' && !isNaN(x) && typeof y === 'number' && !isNaN(y)) {
+        xs.push({ x: Number(x.toFixed(6)), y: Number(y.toFixed(6)) });
+      }
     }
     return xs;
   }, [x0, f]);
@@ -152,10 +163,21 @@ export default function NewtonOptimizer() {
   const derivativeData = useMemo(() => {
     const samples = 300;
     const xs = [];
+    const numX0 = Number(x0);
     const range = 6;
+    
+    // Only generate data if we have valid numbers
+    if (isNaN(numX0)) {
+      return [];
+    }
+    
     for (let i = 0; i <= samples; i++) {
-      const x = x0 - range/2 + (i / samples) * range;
-      xs.push({ x: Number(x.toFixed(6)), y: df(x) });
+      const x = numX0 - range/2 + (i / samples) * range;
+      const y = df(x);
+      // Only add valid data points
+      if (typeof x === 'number' && !isNaN(x) && typeof y === 'number' && !isNaN(y)) {
+        xs.push({ x: Number(x.toFixed(6)), y: Number(y.toFixed(6)) });
+      }
     }
     return xs;
   }, [x0, df]);
