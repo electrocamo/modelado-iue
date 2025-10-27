@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/modelado-iue/static/css/main.b56aeed4.css",
+    "main.js": "/modelado-iue/static/js/main.452bf45e.js",
+    "static/js/453.ac8514a7.chunk.js": "/modelado-iue/static/js/453.ac8514a7.chunk.js",
+    "index.html": "/modelado-iue/index.html",
+    "main.b56aeed4.css.map": "/modelado-iue/static/css/main.b56aeed4.css.map",
+    "main.452bf45e.js.map": "/modelado-iue/static/js/main.452bf45e.js.map",
+    "453.ac8514a7.chunk.js.map": "/modelado-iue/static/js/453.ac8514a7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b56aeed4.css",
+    "static/js/main.452bf45e.js"
+  ]
+}
