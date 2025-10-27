@@ -211,7 +211,7 @@ export default function GoldenSectionOptimizer() {
               </div>
             )}
 
-            <div className="mt-4 text-xs text-gray-500">Nota: funciones predefinidas para evitar evaluación insegura de código. Puedes cambiar las funciones en el código fuente.</div>
+            <div className="mt-4 text-xs text-gray-500">Sección Aurea: reduce progresivamente el intervalo [a,b] donde se encuentra el óptimo.</div>
           </div>
 
           <div className="md:col-span-2 bg-white p-4 rounded-2xl shadow-sm">
